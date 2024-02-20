@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="posts.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./posts.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="./index.html">home</a>
+            <a href="/posts.html">posts</a>
+        </header>
+
+        <main>
+            <h1 class="text-3xl font-semibold">Posts</h1>
+
+            <div>
+                <div
+                    id="posts-container"
+                    class="grid grid-cols-2 md:grid-cols-3 gap-4 my-5"
+                >
+                    <div
+                        class="h-full block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700"
+                    >
+                        <h5
+                            class="font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            Noteworthy technology acquisitions 2021
+                        </h5>
+                        <span
+                            class="text-xs font-medium my-3 inline-block px-3 py-1 bg-green-700 rounded-full"
+                            >mon</span
+                        >
+                        <p
+                            class="text-sm font-normal text-gray-700 dark:text-gray-400"
+                        >
+                            Here are the biggest enterprise technology
+                            acquisitions of 2021 so far, in reverse
+                            chronological order.
+                        </p>
+                    </div>
+                </div>
+                <button
+                    id="fetch-post"
+                    class="mx-auto block text-white bg-blue-800 hover:bg-blue-900 font-medium rounded-lg text-sm px-5 py-2.5"
+                >
+                    Fetch post
+                </button>
+            </div>
+
+            <div
+                class="w-full max-w-sm mx-auto mt-20 rounded-lg bg-gray-800 p-8 py-4"
+            >
+                <form id="addPostForm" class="space-y-4">
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="title"
+                            >Post Title</label
+                        ><input
+                            name="title"
+                            class="bg-gray-700 flex w-full rounded-md border border-gray-600 px-3 py-2 text-sm placeholder:text-muted-foreground"
+                            id="title"
+                            placeholder="Enter the title"
+                            required=""
+                        />
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            for="description"
+                            >Post Description</label
+                        ><textarea
+                            name="description"
+                            class="bg-gray-700 flex w-full rounded-md border border-gray-600 px-3 py-2 text-sm placeholder:text-muted-foreground"
+                            id="description"
+                            placeholder="Enter the description"
+                            required=""
+                        ></textarea>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label
+                            for="countries"
+                            class="block text-sm font-medium"
+                        >
+                            Post Day
+                        </label>
+                        <select
+                            name="day"
+                            id="countries"
+                            class="bg-gray-700 border border-gray-600 text-gray-900 text-sm rounded-lg text-white w-full p-2.5"
+                        >
+                            <option value="mon">Monday</option>
+                            <option value="tue">Tuesday</option>
+                            <option value="wed">Wednesday</option>
+                            <option value="thu">Thursday</option>
+                            <option value="fri">Friday</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="!mt-5 text-white bg-blue-800 hover:bg-blue-900 font-medium rounded-lg text-sm px-5 py-2.5"
+                    >
+                        submit
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-24">
+                <h2 class="text-3xl font-semibold text-center">
+                    Wage calculator
+                </h2>
+
+                <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto mt-10">
+                    <form id="wage-form" class="space-y-4 mt-5">
+                        <div>
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="hours"
+                                >hours</label
+                            ><input
+                                name="hours"
+                                type="number"
+                                class="bg-gray-700 flex w-full rounded-md border border-gray-600 px-3 py-2 text-sm placeholder:text-muted-foreground"
+                                id="hours"
+                                placeholder="Number of hours worked"
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="rate"
+                                >pay rate</label
+                            ><input
+                                name="rate"
+                                type="number"
+                                class="bg-gray-700 flex w-full rounded-md border border-gray-600 px-3 py-2 text-sm placeholder:text-muted-foreground"
+                                id="rate"
+                                placeholder="Pay rate"
+                                required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="!mt-5 text-white bg-blue-800 hover:bg-blue-900 font-medium rounded-lg text-sm px-5 py-2.5"
+                        >
+                            calculate
+                        </button>
+                    </form>
+
+                    <div
+                        id="calculated-pay"
+                        class="bg-gray-800 text-5xl font-medium rounded-lg flex items-center justify-center"
+                    >
+                        $0
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
